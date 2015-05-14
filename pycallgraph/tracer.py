@@ -241,6 +241,8 @@ class TraceProcessor(Thread):
 
                 if self.call_stack_timer:
                     start_time = self.call_stack_timer.pop(-1)
+                    if full_name in self.call_stack:
+                        start_time = None
                 else:
                     start_time = None
 
